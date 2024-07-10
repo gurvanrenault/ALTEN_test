@@ -12,8 +12,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  */
 @SpringBootApplication
 @ComponentScan({"fr.alten.products.*"})
-@EnableJpaRepositories(basePackages="fr.alten.products.domain")
-@EntityScan("fr.alten.products.domain.entity")
+@EnableJpaRepositories(basePackages="fr.alten.products.infrastructure")
+@EntityScan("fr.alten.products.infrastructure.entity")
 public class ProductApplication {
 
     public static void main(String[] args) {

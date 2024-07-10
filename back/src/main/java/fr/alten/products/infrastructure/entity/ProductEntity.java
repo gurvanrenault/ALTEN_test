@@ -1,4 +1,4 @@
-package fr.alten.products.domain.entity;
+package fr.alten.products.infrastructure.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
