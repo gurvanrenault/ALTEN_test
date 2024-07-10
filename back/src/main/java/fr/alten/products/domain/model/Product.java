@@ -1,4 +1,4 @@
-package fr.alten.products.infrastructure.model;
+package fr.alten.products.domain.model;
 
 import lombok.Getter;
 import lombok.NonNull;

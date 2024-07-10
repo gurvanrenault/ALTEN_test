@@ -3,7 +3,7 @@ package fr.alten.products.infrastructure.services;
 import fr.alten.products.domain.entity.ProductEntity;
 import fr.alten.products.domain.mapper.IProductMapper;
 import fr.alten.products.domain.repository.interfaces.IProductRepository;
-import fr.alten.products.infrastructure.model.Product;
+import fr.alten.products.domain.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
