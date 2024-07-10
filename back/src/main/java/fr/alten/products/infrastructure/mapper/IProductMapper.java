@@ -1,12 +1,12 @@
-package fr.alten.products.domain.mapper;
+package fr.alten.products.infrastructure.mapper;
 
 
 
-import fr.alten.products.domain.model.Product;
+import fr.alten.products.infrastructure.model.Product;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 import org.mapstruct.ReportingPolicy;
-import fr.alten.products.domain.entity.ProductEntity;
+import fr.alten.products.infrastructure.entity.ProductEntity;
 @Mapper(
         componentModel = MappingConstants.ComponentModel.SPRING,
         unmappedTargetPolicy = ReportingPolicy.IGNORE
@@ -14,5 +14,7 @@ import fr.alten.products.domain.entity.ProductEntity;
 public interface IProductMapper {
 
     ProductEntity domainToEntity(Product p);
+
+    Product entityToDomain(ProductEntity p);
 }
 
