@@ -20,10 +20,12 @@ public class ProductsController {
     private IProductService productService;
 
     @PostMapping("/products/create")
-    public void createProduct( @RequestBody ProductDTO p) {
+    public ResponseEntity<ProductDTO>  createProduct( @RequestBody ProductDTO p)throws Exception {
         if (ProductVerificator.checkProduct(p)){
            productService.create(mapper.applicationToDomain(p));
+           return ResponseEntity.ok(p);
         }
+        throw new Exception("Le produit n'est pas valide ");
 
 
     }
@@ -32,6 +34,10 @@ public class ProductsController {
         return ResponseEntity.ok(mapper.domainToApplication(productService.getProduct(id)));
 
 
+    }
+    @DeleteMapping("/products/{id}")
+    public void deleteProduct(@PathVariable("id") Long id) throws Exception {
+        productService.delete(id);
     }
 
 }

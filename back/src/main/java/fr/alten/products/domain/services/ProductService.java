@@ -32,4 +32,15 @@ public class ProductService implements IProductService{
         }
         return productMapper.entityToDomain(opt.get());
     }
+
+    @Override
+    public void delete(Long id) throws Exception {
+        Optional<ProductEntity> opt = productRepository.findById(id);
+        if (opt.isPresent()) {
+            productRepository.delete(opt.get());
+        }
+        else {
+            throw new Exception("Le produit n'existe pas ");
+        }
+    }
 }
