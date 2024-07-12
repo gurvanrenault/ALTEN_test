@@ -7,6 +7,8 @@ import fr.alten.products.infrastructure.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -52,5 +54,12 @@ public class ProductService implements IProductService{
         }
         ProductEntity entity = productMapper.domainToEntity(product);
         return productMapper.entityToDomain(productRepository.save(entity));
+    }
+
+    @Override
+    public List<Product> getProducts() {
+        List<ProductEntity> products = new ArrayList<>();
+        productRepository.findAll().forEach(products::add);
+        return productMapper.listEntityToDomain(products);
     }
 }
