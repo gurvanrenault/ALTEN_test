@@ -3,9 +3,11 @@ import fr.alten.products.infrastructure.model.Product;
 
 public interface IProductService {
 
-    void create(Product p);
+    Product create(Product p);
 
     Product getProduct(Long id) throws Exception;
 
     void delete(Long id ) throws  Exception;
+
+    Product update(Long id, Product product)throws  Exception;
 }
