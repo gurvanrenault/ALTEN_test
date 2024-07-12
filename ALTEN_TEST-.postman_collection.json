@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "0786e7bd-ddd9-4809-8921-6f37eff9514f",
+		"name": "ALTEN_TEST*",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36863531"
+	},
+	"item": [
+		{
+			"name": "GET product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"53"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET List of products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"53"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"53"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\t\"id\": 1008,\n\t\t\t\"code\": \"vbb124btr\",\n\t\t\t\"name\": \"Game Controller\",\n\t\t\t\"description\": \"Product Description\",\n\t\t\t\"image\": \"game-controller.jpg\",\n\t\t\t\"price\": 99,\n\t\t\t\"category\": \"Electronics\",\n\t\t\t\"quantity\": 2,\n\t\t\t\"inventoryStatus\": \"LOWSTOCK\",\n\t\t\t\"rating\": 4\n\t\t}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/products/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update product",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\t\"id\": 1008,\n\t\t\t\"code\": \"vbb47tr\",\n\t\t\t\"name\": \"Game Controller\",\n\t\t\t\"description\": \"Product Description\",\n\t\t\t\"image\": \"game-controller.jpg\",\n\t\t\t\"price\": 99,\n\t\t\t\"category\": \"Electronics\",\n\t\t\t\"quantity\": 2,\n\t\t\t\"inventoryStatus\": \"LOWSTOCK\",\n\t\t\t\"rating\": 4\n\t\t}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/products/1008",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"1008"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
