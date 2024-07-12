@@ -19,9 +19,9 @@ public class ProductService implements IProductService{
     private IProductMapper productMapper;
 
     @Override
-    public void create(Product p) {
+    public Product create(Product p) {
         ProductEntity entity = productMapper.domainToEntity(p);
-        productRepository.save(entity);
+        return productMapper.entityToDomain(productRepository.save(entity));
     }
 
     @Override
@@ -42,5 +42,15 @@ public class ProductService implements IProductService{
         else {
             throw new Exception("Le produit n'existe pas ");
         }
+    }
+
+    @Override
+    public Product update(Long id, Product product) throws Exception {
+        Optional<ProductEntity> opt = productRepository.findById(id);
+        if ( ! opt.isPresent()) {
+            throw new Exception("Le produit n'existe pas ");
+        }
+        ProductEntity entity = productMapper.domainToEntity(product);
+        return productMapper.entityToDomain(productRepository.save(entity));
     }
 }
