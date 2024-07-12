@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class ProductsController {
 
@@ -33,9 +35,13 @@ public class ProductsController {
     @GetMapping("/products/{id}")
     public ResponseEntity<ProductDTO> getProduct(@PathVariable("id") Long id) throws Exception {
         return ResponseEntity.ok(mapper.domainToApplication(productService.getProduct(id)));
-
-
     }
+
+    @GetMapping("/products")
+    public ResponseEntity<List<ProductDTO>> getProducts()  {
+        return ResponseEntity.ok(mapper.listDomainToApplication(productService.getProducts()));
+    }
+
     @DeleteMapping("/products/{id}")
     public void deleteProduct(@PathVariable("id") Long id) throws Exception {
         productService.delete(id);
